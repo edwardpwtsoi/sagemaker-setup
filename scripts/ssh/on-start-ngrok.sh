@@ -3,8 +3,8 @@
 echo "Setting up ssh with ngrok..."
 
 echo "Downloading ngrok..."
-curl https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip > ngrok.zip
-unzip -o ngrok.zip
+curl https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz > /home/ec2-user/SageMaker/ngrok.tgz
+sudo tar xvzf /home/ec2-user/SageMaker/ngrok.tgz -C /usr/local/bin
 
 echo "Creating config file /home/ec2-user/SageMaker/.ngrok/config.yml..."
 mkdir -p /home/ec2-user/SageMaker/.ngrok
