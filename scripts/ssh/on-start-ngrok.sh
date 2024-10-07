@@ -67,5 +67,20 @@ EOF
 chmod +x /usr/bin/copy-ssh-keys
 chown ec2-user:ec2-user /usr/bin/copy-ssh-keys
 
+# copy persistent vscode/cursor server
+if [ -d /home/ec2-user/SageMaker/.cursor-server ]; then
+    echo "Copying .cursor-server to /home/ec2-user/.cursor-server..."
+    cp -r /home/ec2-user/SageMaker/.cursor-server /home/ec2-user/.cursor-server
+    chown -R ec2-user:ec2-user /home/ec2-user/.cursor-server
+fi
+
+# copy persistent vscode/cursor server
+if [ -d /home/ec2-user/SageMaker/.vscode-server ]; then
+    echo "Copying .vscode-server to /home/ec2-user/.vscode-server..."
+    cp -r /home/ec2-user/SageMaker/.vscode-server /home/ec2-user/.vscode-server
+    chown -R ec2-user:ec2-user /home/ec2-user/.vscode-server
+fi
+
+
 copy-ssh-keys
 start-ngrok-ssh
